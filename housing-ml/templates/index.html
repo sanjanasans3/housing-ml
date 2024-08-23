@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6570821657712490"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask app</title>
+    <style>
+        .side-nav{
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 15px;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="POST">
+        <input type="text" name="area" placeholder="Enter the area"/>
+            <select>
+                <option value="bathrooms">Bathrooms</option>
+                <option value="stories">Stories</option>
+                <option value="mainroad">Mainroad</option>
+                <option value="guestroom">Guestroom</option>
+                <option value="basement">Basement</option>
+                <option value="hotwaterheating">Hotwaterheating</option>
+                <option value="airconditioning">Airconditioning</option>
+                <option value="parking">Parking</option>
+                <option value="prefarea">Prefarea</option>
+                <option value="furnishingstatus">Furnishingstatus</option>
+            
+            </select>
+        <button type="submit">Submit</button>
+    </form>
+    <h3><br>{{prediction_text}}</h3>
+</body>
+</html>
